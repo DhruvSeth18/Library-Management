@@ -13,8 +13,9 @@ try:
     windll.shcore.SetProcessDpiAwareness(1)
 except:
     pass
-
-mydb = mysql.connector.connect(host='localhost', user='root', password='@Behappy12', database='librarymanagement')
+#Your Changes Here
+mydb = mysql.connector.connect(host='localhost', user='''Your Mysql user name''', password='''Your Sql Password''', database='''Your database Name''')
+# Database Schema present In Schema Structure Folder.
 cur = mydb.cursor()
 
 
@@ -187,9 +188,9 @@ def admin():
                 # Email
                 server = smtplib.SMTP('smtp.gmail.com', 587)
                 server.starttls()
-                server.login("librarymg0123@gmail.com", "ypswfhklylhurbvm")
+                server.login('''  "Enter The Admin Email"  ''', ''''  "Enter Password for Admin gmail"  ''')
                 msg = 'Hello,Your OTP is ' + str(b_)
-                server.sendmail("librarymg0123@gmail.com", V1, msg)  # ("sender","reciever","msg")
+                server.sendmail('''  "Enter The Admin Email"  ''', V1, msg)  # ("sender","reciever","msg")
                 server.close()
                 # end of email
 
